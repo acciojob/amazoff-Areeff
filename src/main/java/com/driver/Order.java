@@ -1,18 +1,28 @@
 package com.driver;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Order {
 
     private String id;
     private int deliveryTime;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public int getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(int deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public Order() {
+    }
 
     public Order(String id, String deliveryTime) {
 
