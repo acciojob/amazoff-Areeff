@@ -1,13 +1,13 @@
 package com.driver;
 
-import lombok.extern.log4j.Log4j2;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-@Log4j2
+
 @Service
 public class OrderService {
     @Autowired
@@ -26,11 +26,11 @@ public class OrderService {
         Optional<Order> orderOptional=orderRepository.findOrder(orderId);
         Optional<DeliveryPartner> deliveryPartnerOptional=orderRepository.findDeliveryPartner(partnerId);
         if(orderOptional.isEmpty()){
-            log.warn("Order not found");
+           // log.warn("Order not found");
             throw new OrdernotFoundExceeption();
         }
         if(deliveryPartnerOptional.isEmpty()){
-            log.warn("Delivery Partner not found");
+            //log.warn("Delivery Partner not found");
             throw new DeliveryPartnerNotFound();
         }
         DeliveryPartner deliveryPartner=deliveryPartnerOptional.get();
