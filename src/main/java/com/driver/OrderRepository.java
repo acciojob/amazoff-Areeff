@@ -41,7 +41,7 @@ public class OrderRepository {
     }
 
     public List<String> getOrderByPartnerId(String partnerId) {
-        return orderPartnerData.getOrDefault(partnerId,new ArrayList<>());
+        return new ArrayList<>(orderPartnerData.getOrDefault(partnerId,new ArrayList<>()));
     }
 
     public List<String> getAllOrders() {
